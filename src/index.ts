@@ -3,6 +3,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import authRoutes from './routes/auth'
 import jobRoutes from './routes/jobs'
+import applicationRoutes from './routes/applications'
 
 dotenv.config()
 
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', authRoutes)
 app.use('/api/jobs', jobRoutes)
+app.use('/api', applicationRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
